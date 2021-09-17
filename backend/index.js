@@ -4,6 +4,10 @@ const items = require("./data/items");
 const app = express();
 
 app.get("/", (req, res) => {
+  res.send('API is running...');
+});
+
+app.get("/items", (req, res) => {
   res.json(items);
 });
 
