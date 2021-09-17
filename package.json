@@ -1,0 +1,14 @@
+{
+  "name": "react-project-course",
+  "version": "1.0.0",
+  "description": "Expense Tracker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/index"
+  },
+  "author": "Anurag Jain",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
