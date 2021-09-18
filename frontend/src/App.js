@@ -34,13 +34,12 @@ const App = () => {
 
       setExpenses(data);
     };
-
     fetchExpenses();
   }, []);
 
   const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => {
-      return [expense, ...prevExpenses];
+      return [...prevExpenses, expense];
     });
   };
 

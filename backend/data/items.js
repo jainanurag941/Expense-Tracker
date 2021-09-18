@@ -1,6 +1,6 @@
 const items = [
   {
-    title: "Toilet Paper",
+    title: "New Book",
     amount: 94.12,
     date: new Date(2020, 7, 14),
   },
