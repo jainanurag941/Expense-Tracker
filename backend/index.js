@@ -1,14 +1,28 @@
 const express = require("express");
-const items = require("./data/items");
+const dotenv = require("dotenv");
+const connectDB = require("./config/db");
+const colors = require("colors");
+const Expense = require("./models/expenseModel");
+const asyncHandler = require("express-async-handler");
+
+dotenv.config();
+
+connectDB();
 
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send('API is running...');
+  res.send("API is running...");
 });
 
-app.get("/items", (req, res) => {
-  res.json(items);
-});
+app.get(
+  "/items",
+  asyncHandler(async (req, res) => {
+    const items = await Expense.find({});
+    res.json(items);
+  })
+);
 
-app.listen(5000, console.log("Server running on port 5000"));
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, console.log(`Server running in port ${PORT}`.yellow.bold));
