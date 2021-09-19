@@ -37,6 +37,7 @@ app.post("/add", async (req, res) => {
   });
 
   await newExpense.save();
+  res.json(newExpense);
 });
 
 const PORT = process.env.PORT || 5000;

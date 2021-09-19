@@ -35,7 +35,7 @@ const App = () => {
       setExpenses(data);
     };
     fetchExpenses();
-  }, []);
+  }, [expenses]);
 
   const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => {

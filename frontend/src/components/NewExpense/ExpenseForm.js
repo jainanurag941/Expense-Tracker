@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
@@ -38,12 +38,13 @@ const ExpenseForm = (props) => {
       amount: +enteredAmount,
       date: new Date(enteredDate),
     };
+
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
 
-    await axios.post("/add", expenseData);
-    props.onSaveExpenseData(expenseData);
+    const response = await axios.post("/add", expenseData);
+    props.onSaveExpenseData(response.data);
   };
 
   return (
